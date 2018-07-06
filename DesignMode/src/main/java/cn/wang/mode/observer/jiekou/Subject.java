@@ -8,13 +8,22 @@ import java.util.List;
  * @author wangfan
  * @Date 2018-07-06 18:53
  */
+
 public interface Subject {
     public List<Observer> observerList = new ArrayList<Observer>();
-    //注册观察者
+    /**
+     * 注册观察者
+     * @param observer
+     */
     public void register(Observer observer);
-    //移除观察者
+    /**
+     * 移除观察者
+     * @param observer
+     */
     public void unregister(Observer observer);
-    //通知观察者
+    /**
+     * 通知观察者
+     */
     public void notified();
 
 }

@@ -6,6 +6,9 @@ package cn.wang.mode.observer.jiekou;
  * @Date 2018-07-06 18:53
  */
 public interface Observer {
-    //更新消息
+    /**
+     * 更新信息
+     * @param message
+     */
     public void update(String message);
 }
