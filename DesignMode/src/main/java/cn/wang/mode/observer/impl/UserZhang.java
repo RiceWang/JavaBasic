@@ -8,7 +8,10 @@ import cn.wang.mode.observer.jiekou.Observer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class UserZhang implements Observer {
+import java.io.Serializable;
+
+public class UserZhang implements Observer,Serializable {
+    private static final long serialVersionUID = 5860112567463044962L;
     Logger logger = LoggerFactory.getLogger(UserZhang.class);
     private String name;
 
