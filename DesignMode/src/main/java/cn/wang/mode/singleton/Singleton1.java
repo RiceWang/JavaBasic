@@ -12,11 +12,10 @@ public class Singleton1 {
     Logger logger = LoggerFactory.getLogger(Singleton1.class);
     private static Singleton1 instance;
     private Singleton1(){
-        System.out.println("Singleton1:创建一个对象");
+        logger.info("Singleton1:创建一个对象");
     }
     public static Singleton1 getInstance(){
         if(instance == null){
-            instance = new Singleton1();
         }
         return  instance;
     }
