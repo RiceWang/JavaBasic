@@ -2,6 +2,7 @@ package cn.wang.mode.reflect;
 
 import org.junit.Test;
 
+import java.lang.reflect.Proxy;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -12,8 +13,9 @@ import java.sql.SQLException;
  * @Date 2018-07-13 11:42
  */
 public class TestReflect {
-    public void testReflect(){
+    public void testReflect() {
         try {
+            //会加载static模块
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -24,10 +26,11 @@ public class TestReflect {
             e.printStackTrace();
         }
 
-
+        //不加载static模块
         ClassLoader c1 = ClassLoader.getSystemClassLoader();
         try {
             c1.loadClass("com.mysql.jdbc.Driver");
+
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
