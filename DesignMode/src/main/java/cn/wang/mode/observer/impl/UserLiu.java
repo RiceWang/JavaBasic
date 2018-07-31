@@ -22,7 +22,7 @@ public class UserLiu implements Observer ,Serializable {
     public String getName() {
         return name;
     }
-
+    @Override
     public void update(String message) {
         logger.info(getName() + ":" +message);
     }

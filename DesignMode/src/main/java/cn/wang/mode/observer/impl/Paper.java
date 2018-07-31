@@ -13,16 +13,17 @@ import java.util.List;
  */
 public class Paper implements Subject,Serializable  {
     private static final long serialVersionUID = 5094246197029025717L;
+    @Override
     public void register(Observer observer) {
         if(!observerList.contains(observer)){
             observerList.add(observer);
         }
     }
-
+    @Override
     public void unregister(Observer observer) {
         observerList.remove(observer);
     }
-
+    @Override
     public void notified() {
         for(Observer observer : observerList){
             observer.update("报纸修改了信息");
